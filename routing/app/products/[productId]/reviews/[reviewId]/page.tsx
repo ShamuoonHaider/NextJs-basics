@@ -1,9 +1,14 @@
+import { notFound } from "next/navigation";
+
 interface ReviewPageProps {
   params: Promise<{ productId: string; reviewId: string }>;
 }
 
 const Page = async ({ params }: ReviewPageProps) => {
   const { productId, reviewId } = await params;
+  if (parseInt(reviewId) > 1000) {
+    notFound();
+  }
   return (
     <div>
       <h1>
