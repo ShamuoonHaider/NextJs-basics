@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/app/globals.css";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ export const metadata = {
   description: "Routing in Next js",
 };
 
-const RootLayout = ({ children }: Props) => {
+const MarketingLayout = ({ children }: Props) => {
   return (
     <html lang="en">
       <header className="bg-amber-400 text-black h-20 flex items-center px-10 ">
@@ -22,4 +22,4 @@ const RootLayout = ({ children }: Props) => {
   );
 };
 
-export default RootLayout;
+export default MarketingLayout;
