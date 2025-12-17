@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
 interface ReviewPageProps {
   params: Promise<{ productId: string; reviewId: string }>;
@@ -7,7 +7,7 @@ interface ReviewPageProps {
 const Page = async ({ params }: ReviewPageProps) => {
   const { productId, reviewId } = await params;
   if (parseInt(reviewId) > 1000) {
-    notFound();
+    redirect("/products/");
   }
   return (
     <div>

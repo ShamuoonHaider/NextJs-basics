@@ -16,3 +16,15 @@ Metadata Rules
 -Metadata follows a top-down order, starting from the root level
 
 - When metadata exists in multiple places along a route, they merge together, with page metadata overriding layout metadata for matching properties
+
+Params and searchParams
+For a given URL:
+Params:
+is a promise that resolves to an object containing the dynamic route parameters (like id)
+
+searchParams:
+is a promise that resolves to an object constaining to query parameters(like filters and sorting)
+
+we can access params and search params in client component by using use hook instead of async await bcz client component don't support async await
+
+while page.tsx has access to both params and seachParams, layout.tsx only has access to params
