@@ -38,3 +38,10 @@ Whenever a user navigates between routes sharinga template, you get a completely
 - DOM elements are recreated
 - state is cleared
 - effects are re-synchronized
+
+ERROR
+
+- It automatically wraps route segments and their nested children in a React Error Boundary
+- You can create custom error UIs for specific segments using the file-system hierarchy
+- It isolates errors to affected segments while keeping the rest of you app functional
+- it enables you to attempt to recover from a erro without requiring a full page reload
