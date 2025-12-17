@@ -28,3 +28,13 @@ is a promise that resolves to an object constaining to query parameters(like fil
 we can access params and search params in client component by using use hook instead of async await bcz client component don't support async await
 
 while page.tsx has access to both params and seachParams, layout.tsx only has access to params
+
+Templates:
+Templates are similar to layouts in that they are also UI shared between multiple pages in your app
+
+Whenever a user navigates between routes sharinga template, you get a completely fresh start
+
+- a new template component instance is mounted
+- DOM elements are recreated
+- state is cleared
+- effects are re-synchronized
