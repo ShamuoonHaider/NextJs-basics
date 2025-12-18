@@ -38,3 +38,25 @@ Whenever a user navigates between routes sharinga template, you get a completely
 - DOM elements are recreated
 - state is cleared
 - effects are re-synchronized
+
+ERROR
+
+- It automatically wraps route segments and their nested children in a React Error Boundary
+- You can create custom error UIs for specific segments using the file-system hierarchy
+- It isolates errors to affected segments while keeping the rest of you app functional
+- it enables you to attempt to recover from a erro without requiring a full page reload
+
+Handling errors in nested routes
+
+- Errors always bubble up to find the closest parent error boundary
+- An error.tsx file handles errors not just for its own folder, but for all the nested child segments below it too
+- By strategically placing error.tsx files at different levels in your route folders, you can control exactly how detailed your error handling gets
+- Where you put your error.tsx file makes a huge difference - it determines exactly which parts of your UI get affected when things go wrong
+
+Handling global errors
+
+1- if an error boundary can't catch errors in the layout.tsx file from the same segment, what about errors in the root layout?
+
+- it doesn't have a parent segment. how do we handle those errors?
+
+ans: Next.js provides a special file called global-error.tsx that goes in your root app directory. this is your last line of defense when something goes catastrophically wrong at the highest level of your app
