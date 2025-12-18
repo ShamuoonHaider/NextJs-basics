@@ -60,3 +60,29 @@ Handling global errors
 - it doesn't have a parent segment. how do we handle those errors?
 
 ans: Next.js provides a special file called global-error.tsx that goes in your root app directory. this is your last line of defense when something goes catastrophically wrong at the highest level of your app
+
+PARALLEL Routes
+
+- Parallel ruotes in Next.js are defined using a feature know a "slots"
+- Slots help Organize content in a modular way
+- To create a slot, we use the `@folder` naming convention
+- Each defined slot automatically becomes a prop in its corresponding `layout.tsx` file
+
+Parallel routes use cases
+
+- Dashboards with multiple sections
+- Split-view interfaces
+- multi-pane layouts
+- complex admin interfaces
+
+Paralle routes benefits
+
+1- Parallel routes are great for splitting a layout into manageable slots(especially when different teams work on different parts)
+2- independent route handling
+3- Sub-navigation
+
+Sub-navigation in routes
+
+- Each slot can essentially function as a mini-application, complete with its own navigation and state management
+
+- Users can interact with each section separately, applying filters, sorting data, or navigating through pages without affection other parts
