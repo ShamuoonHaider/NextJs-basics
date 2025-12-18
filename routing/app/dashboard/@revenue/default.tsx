@@ -1,7 +1,7 @@
 import Card from "@/components/card";
 
 const RevenueAnalytics = () => {
-  return <Card>RevenueAnalytics</Card>;
+  return <Card>Default RevenueAnalytics</Card>;
 };
 
 export default RevenueAnalytics;

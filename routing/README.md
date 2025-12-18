@@ -86,3 +86,13 @@ Sub-navigation in routes
 - Each slot can essentially function as a mini-application, complete with its own navigation and state management
 
 - Users can interact with each section separately, applying filters, sorting data, or navigating through pages without affection other parts
+
+UNmatched routes
+Navigation from UI:
+When navigating through the UI(like clicking links), Next.js keeps showing whatever was in the unmatched slots before
+
+Page Reload:
+Next.js look for a `default.tsx` file in each unmatched slot
+
+This file is critical as it serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL
+without the file, you'll get a 404 error
