@@ -1,0 +1,14 @@
+import Link from "next/link";
+
+const F2 = () => {
+  return (
+    <div>
+      <h1>F2 page</h1>
+      <div>
+        <Link href="/f4">F4</Link>
+      </div>
+    </div>
+  );
+};
+
+export default F2;

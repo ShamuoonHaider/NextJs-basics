@@ -60,3 +60,52 @@ Handling global errors
 - it doesn't have a parent segment. how do we handle those errors?
 
 ans: Next.js provides a special file called global-error.tsx that goes in your root app directory. this is your last line of defense when something goes catastrophically wrong at the highest level of your app
+
+PARALLEL Routes
+
+- Parallel ruotes in Next.js are defined using a feature know a "slots"
+- Slots help Organize content in a modular way
+- To create a slot, we use the `@folder` naming convention
+- Each defined slot automatically becomes a prop in its corresponding `layout.tsx` file
+
+Parallel routes use cases
+
+- Dashboards with multiple sections
+- Split-view interfaces
+- multi-pane layouts
+- complex admin interfaces
+
+Paralle routes benefits
+
+1- Parallel routes are great for splitting a layout into manageable slots(especially when different teams work on different parts)
+2- independent route handling
+3- Sub-navigation
+
+Sub-navigation in routes
+
+- Each slot can essentially function as a mini-application, complete with its own navigation and state management
+
+- Users can interact with each section separately, applying filters, sorting data, or navigating through pages without affection other parts
+
+UNmatched routes
+Navigation from UI:
+When navigating through the UI(like clicking links), Next.js keeps showing whatever was in the unmatched slots before
+
+Page Reload:
+Next.js look for a `default.tsx` file in each unmatched slot
+
+This file is critical as it serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL
+without the file, you'll get a 404 error
+
+INtercepting Routes
+
+- intercepting routes is an advanced routing mechanism that alows you to load a ruote from another part of your application within the current layout
+
+- It's particularly usefull when you want to dispaly new content while keeping you user in the same context
+
+Intercepting routes conventions
+
+(.) to match segments on the same level
+(..) to match segments one level above
+(..)(..) to match segments two levels above
+(...) to match segments from the root app directory
