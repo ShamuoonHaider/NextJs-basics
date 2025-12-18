@@ -96,3 +96,16 @@ Next.js look for a `default.tsx` file in each unmatched slot
 
 This file is critical as it serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL
 without the file, you'll get a 404 error
+
+INtercepting Routes
+
+- intercepting routes is an advanced routing mechanism that alows you to load a ruote from another part of your application within the current layout
+
+- It's particularly usefull when you want to dispaly new content while keeping you user in the same context
+
+Intercepting routes conventions
+
+(.) to match segments on the same level
+(..) to match segments one level above
+(..)(..) to match segments two levels above
+(...) to match segments from the root app directory
