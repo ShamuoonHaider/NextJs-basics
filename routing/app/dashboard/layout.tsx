@@ -5,6 +5,7 @@ interface Props {
   users: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 }
 
 const DashboardLayout = ({
@@ -12,8 +13,10 @@ const DashboardLayout = ({
   users,
   revenue,
   notifications,
+  login,
 }: Props) => {
-  return (
+  const isLoggIn = true;
+  return isLoggIn ? (
     <>
       <div>{children}</div>
       <div className="flex">
@@ -24,6 +27,8 @@ const DashboardLayout = ({
         <div className="flex flex-1">{notifications}</div>
       </div>
     </>
+  ) : (
+    login
   );
 };
 
