@@ -1,3 +1,4 @@
+import ErrorWrapper from "./error-wrapper";
 import "./globals.css";
 import { Metadata } from "next";
 
@@ -18,7 +19,9 @@ const RootLayout = ({ children }: Props) => {
       <header className="bg-amber-400 text-black h-20 flex items-center px-10 ">
         <h1 className="text-4xl font-bold">Header</h1>
       </header>
-      <body>{children}</body>
+      <body>
+        <ErrorWrapper>{children}</ErrorWrapper>
+      </body>
       <footer className="bg-rose-400 text-black h-20 flex items-center px-10 ">
         <h1 className="text-4xl font-bold">Footer</h1>
       </footer>{" "}
