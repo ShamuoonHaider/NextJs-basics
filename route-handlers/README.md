@@ -42,3 +42,12 @@ Cookies serve three main purposes:
 - Managing sessions (like user logins and shopping carts)
 - handling personalization (such as user preferences and themes)
 - tracking (like recording and analyzing user behaviour)
+
+Caching in route handlers
+
+Route handlers are not cached by default but yuo can opt into caching when using the GET method
+
+Caching only works with GET methods
+other HTTP methods like POST, PUT, and DELETE are never cached
+
+if you're using dynamic functions like headers() and cookies(), working with the request object in you GET method, caching won't be applied
