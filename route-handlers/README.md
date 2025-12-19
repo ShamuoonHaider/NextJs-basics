@@ -16,3 +16,14 @@ Route Handlers are the equivalent of API routes in Page router
 Next.js supports GET,POST,PUT,PATCH,DELETE,HEAD, and OPTIONS
 
 If an unsupported method is called, Next.js will return a 405 Method Not Allowed response
+
+HEADERS in route handlers
+HTTP headers represent the metadata associated with an API request and response.
+
+Request Headers:
+
+These are sent by the client, such as web browser, to the server. They contain essential information about the request, which helps the server understand and process it correctly
+
+"User-Agent" which identifies the browser and operating system to the server.
+"Accept" which indicates the content types like text, video, or image formates that the client can process.
+"Authorization" header used by the client to authenticate itself to the server.
