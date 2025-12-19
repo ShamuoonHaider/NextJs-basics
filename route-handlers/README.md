@@ -51,3 +51,14 @@ Caching only works with GET methods
 other HTTP methods like POST, PUT, and DELETE are never cached
 
 if you're using dynamic functions like headers() and cookies(), working with the request object in you GET method, caching won't be applied
+
+Middleware
+
+Middleware in Next.js is a powerfull feature that lets you intercept and control the flow of requests and responses throughout your application
+
+It does this at a global level, significantly enhanciing features like redirects, URL rewrites authentication, headers, cookeies, and more
+
+Middleware lets you specify paths where it should be active
+
+- Custom matcher config
+- Conditional statements
