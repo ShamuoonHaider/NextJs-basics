@@ -1,6 +1,3 @@
-const GET = async() => {
-  return  new Response("Hello World!")
-
-}
-
-export { GET }
+export const GET = async () => {
+  return new Response("Hello World!");
+};
