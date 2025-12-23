@@ -85,3 +85,12 @@ Client components primarily operate on the client but can (can should) also run 
 Client Components have full access to the client environment, such as the browser, allowing them to use state, effects, and event listeners for handling interactivity
 
 They can also access browser-exclusive APIs like geolocation or localStorage, allowing you to build UI for specific use cases
+
+Static Rendering
+Static rendering is a server rendering strategy where we generate HTML pages when building our application
+
+Think of it as preparing all your content in advance - before any user visits your site
+
+Once build, these pages can be caches by CDNs and served instantly to users.With this approach, the same pre-rendered page can be shared among different users, giving your app a significant performance boost.
+
+Static rendering is perfect for things like blog posts, e-commerce product listings, documentation, and marketing pages
