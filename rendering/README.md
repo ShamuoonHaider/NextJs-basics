@@ -126,9 +126,20 @@ generateStaticParams is a function that
 - instead of on demand at request time
 - giving us a nice perfomance boost
 
-DynamicParams
+DynamicParams:
 Control what happens when a dynamic segment is visited that was not generated with generateStaticPamars()
 
 true - Next.js will statically render pages on demand for any dynamic segments not included in generateStaticParams
 
 false - Next.js will return a 404 error for any dunamic segments not included in our pre-rendered list
+
+Streaming:
+Streaming is a stragegy that allows for progressive UI rendering from the server
+
+Work is broken down into smaller chunks and streamed to the client as soon as they're ready
+
+This means users can see parts of the page right away, without waiting for everything to load
+
+It's particularly powerfull for improving initial page load times and handling UI elements that depends on slower data fetches, which would normally hold up the entire route
+
+Streaming comes build right into the App Router
