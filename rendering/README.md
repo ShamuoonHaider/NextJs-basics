@@ -94,3 +94,34 @@ Think of it as preparing all your content in advance - before any user visits yo
 Once build, these pages can be caches by CDNs and served instantly to users.With this approach, the same pre-rendered page can be shared among different users, giving your app a significant performance boost.
 
 Static rendering is perfect for things like blog posts, e-commerce product listings, documentation, and marketing pages
+
+Dynamic rendering
+Dynamic rendering is a server rendering strategy where routes are rendered uniquely for each user when they make a request
+
+It is useful when you need to show personalize data or information that's only available at request time(and not ahead for time during prerendering)- things like cookies or URL search parameters
+
+News websites, personalized shopping pages, and social media fees are some examples wher edunamic rendering is beneficial
+
+How to dynamically render
+
+Next.js automatically switches to dynamic rendering for an entire route when it detects what we call a "dynamic function" or "dynamic API"
+
+In Next.js these dynamic functions are:
+
+- cookies()
+- headers()
+- connection()
+- draftMode()
+- searchParams prop
+- after()
+
+Using any of these automatically opts your entire route into dynamic rendering at request time
+
+generateStaticParams()
+
+generateStaticParams is a function that
+
+- works alongside dynamic route segments
+- to generate static routes during build time
+- instead of on demand at request time
+- giving us a nice perfomance boost
