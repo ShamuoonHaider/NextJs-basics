@@ -143,3 +143,21 @@ This means users can see parts of the page right away, without waiting for every
 It's particularly powerfull for improving initial page load times and handling UI elements that depends on slower data fetches, which would normally hold up the entire route
 
 Streaming comes build right into the App Router
+
+Server and Client components composition patterns
+
+Server components:
+
+- fetching data
+- accessing backend resources directly
+- keeping sensitive information(like access tokesn and API keys) secure on the server
+- handling large dependicies server-side - which means less Javascripot for your users to download
+
+Client Components:
+
+- adding interactivity
+- handling event listeners (like onClick(), onChanage(), etc)
+- managing state and lifecycle effects (using hooks like useState(), useEffect)
+- working with browser-specific APIs
+- implementing custom hooks
+- Using React class components
