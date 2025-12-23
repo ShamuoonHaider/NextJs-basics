@@ -125,3 +125,10 @@ generateStaticParams is a function that
 - to generate static routes during build time
 - instead of on demand at request time
 - giving us a nice perfomance boost
+
+DynamicParams
+Control what happens when a dynamic segment is visited that was not generated with generateStaticPamars()
+
+true - Next.js will statically render pages on demand for any dynamic segments not included in generateStaticParams
+
+false - Next.js will return a 404 error for any dunamic segments not included in our pre-rendered list

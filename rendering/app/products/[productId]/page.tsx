@@ -8,7 +8,11 @@ export async function generateStaticParams() {
 
 const ProductDetails = async ({ params }: Props) => {
   const { productId } = await params;
-  return <div>Product Details for product ID: {productId}</div>;
+  return (
+    <div>
+      Product with ID: {productId} rendered at {new Date().toLocaleTimeString()}
+    </div>
+  );
 };
 
 export default ProductDetails;
