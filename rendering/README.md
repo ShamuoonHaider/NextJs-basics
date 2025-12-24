@@ -183,3 +183,9 @@ Client-only code works with browser-specific features - think DOM manipulation, 
 These features aren't available on the server, so we need to make sure such code runs only on the client side to avoid server-side rendering errors
 
 To prevent unintended server side usage of client side code, we can use a package called client-only
+
+Client component Placement
+
+Since server components can't handle state and interactivity, we need client components to fill this gap
+
+The key recommendation here is to position these client component lowever in your component tree
