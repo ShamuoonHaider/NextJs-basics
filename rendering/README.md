@@ -161,3 +161,15 @@ Client Components:
 - working with browser-specific APIs
 - implementing custom hooks
 - Using React class components
+
+Context Providers
+
+- Context providers typically live near the root of an application to share global state and logic
+
+for eg., you application's theme
+
+Howeever, React context ins't supported in Server Components
+
+If you try to create a context at your application's root, you'll run into an error
+
+The solution is to create your context and render its provider inside a dedicated Client Component
