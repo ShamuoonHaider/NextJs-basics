@@ -24,3 +24,11 @@ React will only make the actual fetch once and reuse the result for subsequent c
 It's a React feature and thereby included in Next.js
 
 Lets you wriet data-fetching code exacly where you need it rather than having to centralize fetches and pass data down through props
+
+Loading and Error states
+
+While client components require you to manage these staes with separate variables and contional rendering, server components make this process much cleaner
+
+To implement a loading state, all we need to do is define and export a React component loading.tsx
+
+For handling errors, define and export a React component in error.tsx
