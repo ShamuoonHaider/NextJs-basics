@@ -32,3 +32,12 @@ While client components require you to manage these staes with separate variable
 To implement a loading state, all we need to do is define and export a React component loading.tsx
 
 For handling errors, define and export a React component in error.tsx
+
+Data fetching patterns:
+
+When fetching data inside components, you need to be aware of two data fetching patterns:
+
+1. Sequential
+2. Parallel
+
+Sequential: requests in a component tree are dependent on each other. This can lead to longer loading times
