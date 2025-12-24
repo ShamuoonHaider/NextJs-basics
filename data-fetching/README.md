@@ -41,3 +41,5 @@ When fetching data inside components, you need to be aware of two data fetching 
 2. Parallel
 
 Sequential: requests in a component tree are dependent on each other. This can lead to longer loading times
+
+Parallel: requests in a route are eagerly intiated and will load data at the same time. This reduces the total time it takes to load data.
