@@ -189,3 +189,15 @@ Client component Placement
 Since server components can't handle state and interactivity, we need client components to fill this gap
 
 The key recommendation here is to position these client component lowever in your component tree
+
+Rendering Section Summary
+
+- CSR(client-side rendering)
+- SSR(server-side rendering)
+- Suspense for SSR
+- RSCs(React-server components)
+- Server and client components
+- RSC rendering lifecycle
+- static and dynamic rendering
+- Streaming
+- Server and client composition patterns
