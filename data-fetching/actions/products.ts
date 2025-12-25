@@ -1,6 +1,6 @@
 "use server";
 
-import { addProduct } from "@/prisma-db";
+import { addProduct, updateProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 
 interface Errors {
@@ -36,5 +36,35 @@ export const createProduct = async (prevState: FormState, data: FormData) => {
   }
 
   await addProduct(title, price, description);
+  redirect("/products-db");
+};
+
+export const editProduct = async (
+  id: number,
+  prevState: FormState,
+  data: FormData
+) => {
+  "use server";
+  const title = data.get("title") as string;
+  const price = parseInt(data.get("price") as string);
+  const description = data.get("description") as string;
+
+  const errors: Errors = {};
+
+  if (!title) {
+    errors.title = "Title is required";
+  }
+  if (!price || price <= 0) {
+    errors.price = "Price must be greater than zero";
+  }
+  if (!description) {
+    errors.description = "Description is required";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { error: errors };
+  }
+
+  await updateProduct(id, title, price, description);
   redirect("/products-db");
 };
