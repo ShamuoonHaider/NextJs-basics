@@ -115,3 +115,9 @@ const status = useFormStatus()
 - data: an object containing the form's submission data
 - method: a string(either "get" or "post") showing the HTTP method being used
 - action: a reference to the function that was passed to the parent <form>'s action prop
+
+Form Validation with useActionState
+
+useActionState is a React hook that allows us to update state based on the result of a form action
+
+It is particularly helpfull for handling form validation and error messages
