@@ -68,3 +68,7 @@ Prisma:
 
 - A tool that makes it really easy to talk to your database
 - It's like a translator that helps your code communicate with SQLite
+
+Data Mutations
+
+To really appreciate the app router's approach to data mutation. it's worth looking at how we've traditionally handled data mutations in React
