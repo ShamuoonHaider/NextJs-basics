@@ -121,3 +121,15 @@ Form Validation with useActionState
 useActionState is a React hook that allows us to update state based on the result of a form action
 
 It is particularly helpfull for handling form validation and error messages
+
+Pending(useFormStatus) vs isPending(useActionState)
+
+Both can help use determine if a form is begin submitted and let us disable the submit button - but there's an interesting difference between them
+
+The pending state from useFormStatus is specifically for form submission
+
+isPending from useActionState can be used with any Action, not just form submissions
+
+Go with pending from useFormStatus when you're building reusable components that are meant to live inside forms, for example, submit buttons or loading spinners that you'll want to use across different forms in your applications.
+
+Choose isPending from useActionState when you need to keep track of server actions that aren't necessarily related to form submissions. It gives you that extra flexibility.
