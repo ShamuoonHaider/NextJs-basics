@@ -1,3 +1,4 @@
+import { Submit } from "@/components/submit";
 import { addProduct } from "@/prisma-db";
 import { redirect } from "next/navigation";
 
@@ -36,12 +37,7 @@ const AddProductPage = () => {
           name="description"
         />
       </label>
-      <button
-        type="submit"
-        className="block w-full p-2 text-white bg-blue-500 rounded cursor-pointer disabled:bg-gray-500"
-      >
-        Submit
-      </button>
+      <Submit />
     </form>
   );
 };
