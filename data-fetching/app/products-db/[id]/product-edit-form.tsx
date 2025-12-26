@@ -10,10 +10,9 @@ const EditProductForm = ({ product }: { product: Product }) => {
     error: {},
   };
 
-  const [state, formAction] = useActionState(
-    editProduct.bind(null, product.id),
-    initialState
-  );
+  const editProductWithId = editProduct.bind(null, product.id);
+
+  const [state, formAction] = useActionState(editProductWithId, initialState);
 
   return (
     <form action={formAction} className="p-4 space-y-4 max-w-96">
