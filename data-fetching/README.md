@@ -140,3 +140,25 @@ useOptimistic is a React Hook that provides a way to optimistically update the U
 This technique helps make our apps feel more responsive, especially when working with forms
 
 instead of making users wait for server responses, we can show them the expected result right away.
+
+Form components
+The form component is built on top of the HTML form element
+
+Comes with some powerful features that makes it perfect for modern web applications:
+
+- It automatically prefetches loading UI
+- It handles client-side navigation on form submission
+- It provides progressive enhancement out of the box
+
+Data fetching and mutations summary
+
+1- Fetch data in client components
+2- Fetch data in server components with async/await
+3- Handle loading and error and states with loading.tsx and error.tsx
+4- Fetching data directly from a database
+5- Server actions for data mutations
+6- Feedback with useFormStatus and useActionState hook
+7- Separating server actions for use in client component
+8- Pass additional data to perform update and delete operations
+9- Perform optimistic updates
+10- Form components
