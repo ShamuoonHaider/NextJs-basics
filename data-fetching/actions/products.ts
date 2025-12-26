@@ -1,6 +1,7 @@
 "use server";
 
-import { addProduct, updateProduct } from "@/prisma-db";
+import { addProduct, updateProduct, deleteProduct } from "@/prisma-db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 interface Errors {
@@ -44,7 +45,6 @@ export const editProduct = async (
   prevState: FormState,
   data: FormData
 ) => {
-  "use server";
   const title = data.get("title") as string;
   const price = parseInt(data.get("price") as string);
   const description = data.get("description") as string;
@@ -67,4 +67,9 @@ export const editProduct = async (
 
   await updateProduct(id, title, price, description);
   redirect("/products-db");
+};
+
+export const removeProduct = async (id: number) => {
+  await deleteProduct(id);
+  revalidatePath("/products-db");
 };
