@@ -1,0 +1,75 @@
+"use server";
+
+import { addProduct, updateProduct, deleteProduct } from "@/prisma-db";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
+interface Errors {
+  title?: string;
+  price?: string;
+  description?: string;
+}
+
+export interface FormState {
+  error: Errors;
+}
+
+export const createProduct = async (prevState: FormState, data: FormData) => {
+  "use server";
+  const title = data.get("title") as string;
+  const price = parseInt(data.get("price") as string);
+  const description = data.get("description") as string;
+
+  const errors: Errors = {};
+
+  if (!title) {
+    errors.title = "Title is required";
+  }
+  if (!price || price <= 0) {
+    errors.price = "Price must be greater than zero";
+  }
+  if (!description) {
+    errors.description = "Description is required";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { error: errors };
+  }
+
+  await addProduct(title, price, description);
+  redirect("/products-db");
+};
+
+export const editProduct = async (
+  id: number,
+  prevState: FormState,
+  data: FormData
+) => {
+  const title = data.get("title") as string;
+  const price = parseInt(data.get("price") as string);
+  const description = data.get("description") as string;
+
+  const errors: Errors = {};
+
+  if (!title) {
+    errors.title = "Title is required";
+  }
+  if (!price || price <= 0) {
+    errors.price = "Price must be greater than zero";
+  }
+  if (!description) {
+    errors.description = "Description is required";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { error: errors };
+  }
+
+  await updateProduct(id, title, price, description);
+  redirect("/products-db");
+};
+
+export const removeProduct = async (id: number) => {
+  await deleteProduct(id);
+  revalidatePath("/products-db");
+};
