@@ -21,3 +21,12 @@ In authentication you've got so many things to take care of
 6- Access session and user data when needed
 7- Set up role-based access control(admin, editor viewer, and so on)
 8- Provide a way to sign out
+
+ROle based Access Control
+
+- Clerk gives us something called user meatadata, whcih like a storage space for extra use information
+
+- we'll use it to store user roles
+- publicMetadata because it's read-only in the browser, making it super secure for storing sensitive information like user roles
+- to build a basic RBAC system, we need to make sure this publicMetadata is readily available in the session token
+- we can quickly check user roles without having to make extra network requests every time we need this information
