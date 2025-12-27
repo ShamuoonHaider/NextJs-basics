@@ -4,7 +4,7 @@ import {
 } from "@clerk/nextjs/server";
 
 // const isProtectedRoute = createRouteMatcher("/user-profile");
-const isPublicRoute = createRouteMatcher(["/", "/sign-in(*)", "/sign-up(*)"]);
+const isPublicRoute = createRouteMatcher(["/", "/sign-in(.*)", "/sign-up(.*)"]);
 export default clerkProxy(async (auth, req) => {
   // if (isProtectedRoute(req)) await auth.protect();
   const { userId, redirectToSignIn } = await auth();
